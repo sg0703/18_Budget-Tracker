@@ -6,6 +6,10 @@
 
 Budget Tracker allows users to enter credits and debits and keeps track of the total amount in their budget. The app uses IndexedDB, a service-worker, and a web manifest to ensure users can continue to keep track of their money offline. The app is deployed on Heroku and MongoDB Atlas is used to store transactions.
 
+## Deployed
+
+See the deployed version of Budget Tracker [here](https://gentle-thicket-09175.herokuapp.com/).
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -32,7 +36,7 @@ Feel free to email to offer any suggestions.
 
 ## Test
 
-You can go to the deployed version HERE and try the app out for yourself!
+You can go to the deployed version [here](https://gentle-thicket-09175.herokuapp.com/) and try to add debits and credits. Check the console log to see that a Service Worker is being used. Turn the network connection off and on in the developer tools. You can add entries while offline, and the app will automatically send them to the database when the connection is restored.
 
 ## License
 
