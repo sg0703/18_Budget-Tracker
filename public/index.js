@@ -152,10 +152,6 @@ document.querySelector("#sub-btn").onclick = function() {
   sendTransaction(false);
 };
 
-function saveRecord(transaction) {
-  // put index DB stuff here
-}
-
 // window.addEventListener => 
 // so indexedDB will automatically send the requests to mongoose when it comes back online, that's what it does. 
 // 
