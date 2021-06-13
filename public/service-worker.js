@@ -1,5 +1,5 @@
 // configure static file cache
-const CACHE_NAME = "static-cache-v2";
+const CACHE_NAME = "budget-static-cache";
 
 // configure static files to cache
 const FILES_TO_CACHE = [

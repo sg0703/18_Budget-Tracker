@@ -3,7 +3,10 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 const compression = require("compression");
 
-const PORT = 3500;
+// bring in mongoose URL/password
+require ('dotenv').config();
+
+const PORT = process.env.PORT || 3500;
 
 const app = express();
 
@@ -15,14 +18,17 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/budget", {
+mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost/budget', {
   useNewUrlParser: true,
   useFindAndModify: false
+})
+.then(() => {
+  console.log('Connected to MongodDB Atlas!');
+  // routes
+  app.use(require("./routes/api.js"));
+
+  app.listen(PORT, () => {
+    console.log(`App running on port ${PORT}!`);
+  });
 });
 
-// routes
-app.use(require("./routes/api.js"));
-
-app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}!`);
-});
