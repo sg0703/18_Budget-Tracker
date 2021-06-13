@@ -29,6 +29,7 @@ To use the app, just enter a description for your transaction and the amount. Th
 
 ![Screenshot 1](readme/screen1.png)
 ![Screenshot 2](readme/screen2.png)
+![Screenshot 3](readme/screen3.png)
 
 ## Contribute
 
