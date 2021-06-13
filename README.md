@@ -4,7 +4,7 @@
 
 ## Description
 
-Budget Tracker allows users to enter credits and debits and keeps track of the total amount in their budget. The app uses IndexedDB, a service-worker, and a web manifest to ensure users could continue to keep track of their money offline. The app is deployed on Heroku and MongoDB Atlas is used to store transactions.
+Budget Tracker allows users to enter credits and debits and keeps track of the total amount in their budget. The app uses IndexedDB, a service-worker, and a web manifest to ensure users can continue to keep track of their money offline. The app is deployed on Heroku and MongoDB Atlas is used to store transactions.
 
 ## Table of Contents
 
