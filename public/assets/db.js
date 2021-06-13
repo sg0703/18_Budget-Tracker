@@ -1,3 +1,4 @@
+// set global vars
 let db;
 let budgetVersion;
 
@@ -15,6 +16,15 @@ request.onupgradeneeded = function (e) {
 // if error, display it
 request.onerror = () => {
   displayActionFailure(this.error);
+};
+
+// when first loaded up, check to see if user is online, if they are send whatever cached requests are in DB
+request.onsuccess = function (e) {
+  db = e.target.result;
+
+  if (navigator.onLine) {
+    checkDatabase();
+  }
 };
 
 // send cached entries to database
@@ -51,14 +61,7 @@ function checkDatabase() {
   }
 }
 
-request.onsuccess = function (e) {
-  db = e.target.result;
-
-  if (navigator.onLine) {
-    checkDatabase();
-  }
-};
-
+// save transaction
 const saveRecord = (record) => {
   console.log('Fetch failed, saving to IndexedDB');
 

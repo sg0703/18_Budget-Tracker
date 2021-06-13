@@ -9,7 +9,8 @@ const FILES_TO_CACHE = [
   'styles.css',
   'service-worker.js',
   '/assets/db.js',
-  'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
+  'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+  'https://cdn.jsdelivr.net/npm/chart.js@2.8.0'
 ];
 
 // install service worker
@@ -43,12 +44,16 @@ self.addEventListener("activate", function(evt) {
 });
 
 // send cached static files if offline
-self.addEventListener("fetch", function(evt) {
-  evt.respondWith(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.match(evt.request).then(response => {
-        return response || fetch(evt.request);
-      });
-    })
-  );
+self.addEventListener("fetch", (evt) => {
+  // added this to prevent console error when sending credits/debits offline
+  const { request } = evt;
+  if(request.method === 'GET') {
+    evt.respondWith(
+      caches.open(CACHE_NAME).then(cache => {
+        return cache.match(evt.request).then(response => {
+          return response || fetch(evt.request);
+        });
+      })
+    );
+  }
 });
