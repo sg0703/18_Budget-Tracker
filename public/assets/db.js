@@ -1,6 +1,5 @@
 // set global vars
 let db;
-let budgetVersion;
 
 // create database
 const request = indexedDB.open('BudgetTransactions', 1);
@@ -28,7 +27,7 @@ request.onsuccess = function (e) {
 };
 
 // send cached entries to database
-function checkDatabase() {
+const checkDatabase = () => {
   let transaction = db.transaction(['BudgetTransactions'], 'readwrite');
   const store = transaction.objectStore('BudgetTransactions');
   const getAll = store.getAll();
