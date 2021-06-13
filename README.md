@@ -21,11 +21,10 @@ Clone the GitHub repo, and set up a collection on MongoDB Atlas. Make sure to us
 
 ## Usage
 
-Usage Instructions
+To use the app, just enter a description for your transaction and the amount. Then decide if it's a credit or debit, and click the appropriate button. The amount will be entered into the database immediately if online. If you are offline, the API request will be stored in IndexedDB. When your network connection is restored, the app will automatically send the queued API requests to the database. The data will then persist within your app.
 
-![Screenshot 1](assets/images/screen1.png)
-![Screenshot 2](assets/images/screen2.png)
-![Screenshot 3](assets/images/screen3.png)
+![Screenshot 1](readme/screen1.png)
+![Screenshot 2](readme/screen2.png)
 
 ## Contribute
 
